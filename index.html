@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shotgun Tense Master - Interactive English Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>🤠 Shotgun Tense Master 🤠</h1>
+            <p class="subtitle">Lock, load, and shoot down the correct English tenses before time runs out!</p>
+            <div class="game-instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>Read the sentence displayed at the top.</li>
+                    <li>Aim your shotgun at the correct grammar tense target.</li>
+                    <li>Click or tap a target to shoot it!</li>
+                    <li>Be careful! Wrong answers will trigger feedback explaining the mistake.</li>
+                    <li>Complete all rounds perfectly to win the Ultimate Trophy!</li>
+                </ul>
+            </div>
+            <button id="start-btn" class="btn-primary">Load Shotgun & Start Game</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="hud-item">Score: <span id="score-val">0</span> / <span id="total-val">0</span></div>
+                <div class="hud-item">Round: <span id="round-val">1</span>/<span id="max-rounds">12</span></div>
+                <div id="timer" class="hud-item warning">Time: <span id="timer-val">0.0</span>s</div>
+            </div>
+
+            <div class="sentence-container">
+                <p id="sentence-text">Loading sentence...</p>
+            </div>
+
+            <!-- Clay pigeon / Target area -->
+            <div id="target-area" class="target-area">
+                <!-- Targets will be injected here dynamically by JavaScript -->
+            </div>
+
+            <!-- Feedback Area -->
+            <div id="feedback-panel" class="feedback-panel hidden">
+                <div class="feedback-content">
+                    <span class="feedback-icon">❌</span>
+                    <p id="feedback-text">Feedback message goes here...</p>
+                    <button id="next-btn" class="btn-secondary">Next Target ➔</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="screen">
+            <h2 id="end-title">Game Over!</h2>
+            <div class="result-stats">
+                <p>Final Score: <strong id="final-score">0</strong></p>
+                <p>Total Time Taken: <strong id="final-time">0</strong> seconds</p>
+            </div>
+            <div id="end-message" class="end-message">
+                <!-- Encouragement or Try Again message goes here -->
+            </div>
+            <button id="restart-btn" class="btn-primary">Try Again 🔄</button>
+        </div>
+    </div>
+
+    <!-- Audio elements via Data URIs or generated synth sounds using Web Audio API in script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
